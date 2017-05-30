@@ -8,8 +8,12 @@
 
 import UIKit
 import TextFieldEffects
+import Firebase
+import MapKit
 
 class AddArtViewController: UIViewController {
+    
+     let locationManager = CLLocationManager()
     
     
     @IBOutlet weak var nameOfArt: HoshiTextField!
@@ -29,7 +33,11 @@ class AddArtViewController: UIViewController {
     @IBAction func postArt(_ sender: Any) {
         
         
+        
+        
+        
     }
+    
     
     
     override func didReceiveMemoryWarning() {

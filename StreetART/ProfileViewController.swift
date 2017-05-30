@@ -106,7 +106,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
         
         let image = images[indexPath.row]
 
-       // cell.imageView.sd_setImage(with: URL(string: image.url), placeholderImage: UIImage(named:"image1"))
+    //   cell.imageView.sd_setImage(with: URL(string: image.url), placeholderImage: UIImage(named:"image1"))
         
         return cell
         

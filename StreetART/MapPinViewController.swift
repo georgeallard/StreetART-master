@@ -25,14 +25,36 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         super.viewDidLoad()
 
         mapView.delegate = self
-        
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
         mapView.userTrackingMode = .follow
+        
+        
 }
 
+        
+    @IBAction func addArt_TouchUpInside(_ sender: Any) {
+        
+        
+        
+       // let artLocation = FIRDatabase.database().reference(withPath: "artSpot")
+        
+        let myLocation: CLLocationCoordinate2D = (locationManager.location?.coordinate)!
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = myLocation
+        mapView.addAnnotation(annotation)
+        
+        annotation.title = "This is my annotation"
+        self.mapView.addAnnotation(annotation)
+        
+        //artLocation.setValue(["location": locationManager.location?.coordinate])
+
+    }
     
+    
+    
+   
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else {
