@@ -787,6 +787,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="415" height="20"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="streetARNAV" translatesAutoresizingMaskIntoConstraints="NO" id="MjR-3D-q9B">
+                                <rect key="frame" x="158" y="12" width="99" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tk6-Mm-w2D" secondAttribute="trailing" id="CAg-cf-U9b"/>
@@ -820,7 +824,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mw1-WH-t6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3258" y="820"/>
+            <point key="canvasLocation" x="3257.971014492754" y="819.29347826086962"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="bIs-j9-Clr">
@@ -836,8 +840,9 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4O-N9-Z2m">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem title="Settings" id="wLg-7T-5vT">
+                                    <navigationItem id="wLg-7T-5vT">
                                         <barButtonItem key="leftBarButtonItem" title="Dismiss" id="U54-5r-IsI">
                                             <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
@@ -943,6 +948,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="streetARNAV" translatesAutoresizingMaskIntoConstraints="NO" id="qji-dP-QkE">
+                                <rect key="frame" x="158" y="12" width="99" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
