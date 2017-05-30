@@ -32,19 +32,7 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         mapView.userTrackingMode = .follow
 }
 
-        
     
-    
-    @IBAction func addArt_TouchUpInside(_ sender: Any) {
-        
-            //let someCoordinate = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
-        let myLocation: CLLocationCoordinate2D = (locationManager.location?.coordinate)!
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = myLocation
-        mapView.addAnnotation(annotation)
-    }
-    
-   
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else {
@@ -69,6 +57,9 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         }
         return annotationView
     }
+    
+    
+    
     
     
 }
