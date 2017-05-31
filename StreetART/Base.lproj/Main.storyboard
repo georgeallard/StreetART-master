@@ -1449,7 +1449,7 @@
                                                 </imageView>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPn-xh-Yxl">
                                                     <rect key="frame" x="0.0" y="377" width="25" height="25"/>
-                                                    <state key="normal" image="unlike"/>
+                                                    <state key="normal" image="icons8-hearts_filled"/>
                                                     <connections>
                                                         <action selector="unlikePressed:" destination="PsB-yg-os9" eventType="touchUpInside" id="vgY-FD-akg"/>
                                                     </connections>
@@ -1472,7 +1472,7 @@
                                                         <constraint firstAttribute="height" constant="25" id="5Ul-Z9-gP5"/>
                                                         <constraint firstAttribute="width" constant="25" id="qSQ-Qe-S6B"/>
                                                     </constraints>
-                                                    <state key="normal" image="like"/>
+                                                    <state key="normal" image="like-1"/>
                                                     <connections>
                                                         <action selector="likePressed:" destination="PsB-yg-os9" eventType="touchUpInside" id="OWY-6d-fVG"/>
                                                     </connections>
@@ -1583,11 +1583,12 @@
         <image name="icons8-brush-1" width="32" height="32"/>
         <image name="icons8-conference_call-1" width="32" height="32"/>
         <image name="icons8-erase_filled-1" width="32" height="32"/>
+        <image name="icons8-hearts_filled" width="25" height="25"/>
         <image name="icons8-map_marker-1" width="32" height="32"/>
         <image name="icons8-save-1" width="32" height="32"/>
         <image name="icons8-undo-1" width="32" height="32"/>
         <image name="icons8-user_male_circle-2" width="32" height="32"/>
-        <image name="like" width="50" height="50"/>
+        <image name="like-1" width="50" height="50"/>
         <image name="login" width="375" height="667"/>
         <image name="pinkicon" width="53" height="53"/>
         <image name="postButton" width="414" height="69"/>
@@ -1595,7 +1596,6 @@
         <image name="signuppic" width="218" height="218"/>
         <image name="streetARNAV" width="99" height="33"/>
         <image name="tealicon" width="53" height="53"/>
-        <image name="unlike" width="50" height="50"/>
         <image name="whiteicon" width="53" height="53"/>
         <image name="yellowicon" width="53" height="53"/>
     </resources>

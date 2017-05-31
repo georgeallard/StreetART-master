@@ -37,10 +37,7 @@ class drawViewController: UIViewController {
         tool.frame = CGRect(x: self.view.bounds.size.width, y: self.view.bounds.size.height, width: 38, height: 38)
         tool.image = #imageLiteral(resourceName: "Paintbrush")
         self.view.addSubview(tool)
-    
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+        
         createAlert(title: "Welcome To Draw", message: "To change brush size/opacity and create a unique colour press settings button. To draw on your own image, press save.")
     }
     
@@ -54,8 +51,10 @@ class drawViewController: UIViewController {
         }))
         
         self.present(alert, animated: true, completion: nil)
-        
+    
     }
+    
+ 
 
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
