@@ -106,13 +106,12 @@ class drawViewController: UIViewController {
 
     @IBAction func reset(_ sender: Any) {
         
-             self.imageView.image = nil
-
+        self.imageView.image = nil
     }
-    
-
+ 
     
     @IBAction func save(_ sender: Any) {
+        
         let actionSheet = UIAlertController(title: "Pick your option", message: "", preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Pick an image", style: .default, handler: { (_) in
             
@@ -133,9 +132,10 @@ class drawViewController: UIViewController {
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         
         present(actionSheet, animated: true, completion: nil)
-        
     }
+
     
+  
     
     @IBAction func erase(_ sender: Any) {
         
@@ -152,11 +152,13 @@ class drawViewController: UIViewController {
         }
         
         isDrawing = !isDrawing
-        
+    }
+    
+  
+    @IBAction func setting(_ sender: Any) {
     }
 
-    @IBAction func setting(_ sender: Any) {
-}
+
 
 
     @IBAction func coloursPicked(_ sender: Any) {
