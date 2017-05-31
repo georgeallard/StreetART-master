@@ -1159,7 +1159,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MOf-5p-Xyx">
-                                <rect key="frame" x="0.0" y="69" width="414" height="618"/>
+                                <rect key="frame" x="0.0" y="69" width="414" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" rowHeight="60" id="Qgk-yM-xst" customClass="UserCell" customModule="StreetART" customModuleProvider="target">
@@ -1394,7 +1394,7 @@
                                 </view>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="postCell" id="PsB-yg-os9" customClass="PostCell" customModule="StreetART" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="0.0" width="375" height="426"/>
+                                        <rect key="frame" x="19.666666666666668" y="0.0" width="375" height="426"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="426"/>
@@ -1558,7 +1558,7 @@
         <image name="yellowicon" width="53" height="53"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ejM-PO-q9o"/>
+        <segue reference="s40-Nr-dva"/>
         <segue reference="Nhk-54-UVl"/>
     </inferredMetricsTieBreakers>
 </document>

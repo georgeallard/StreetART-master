@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import TextFieldEffects
+import FirebaseAuth
 
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 

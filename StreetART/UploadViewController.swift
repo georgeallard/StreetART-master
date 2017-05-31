@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
+
 
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -51,7 +53,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBAction func postPressed(_ sender: Any) {
         
          AppDelegate.instance().showActivityIndicator()
-        
+    
         let uid = FIRAuth.auth()!.currentUser!.uid
         let ref = FIRDatabase.database().reference()
         let storage = FIRStorage.storage().reference(forURL: "gs://streetart-9f907.appspot.com")

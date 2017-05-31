@@ -16,6 +16,7 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     @IBOutlet weak var addArt: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
+    var ref = FIRDatabase.database().reference().child("art")
     
     //var #imageLiteral(resourceName: "MapAnnotation") = MKPointAnnotation(
     
@@ -36,20 +37,45 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         
     @IBAction func addArt_TouchUpInside(_ sender: Any) {
         
+        let alertController = UIAlertController(title: "Name of Art", message: "", preferredStyle: .alert)
         
+        let saveAction = UIAlertAction(title: "Save", style: .default, handler: { _ in
+            let artTextField = alertController.textFields![0] as UITextField
+            
+            
+            let newArt = self.ref.childByAutoId()
+            
+            
+            
+            let myLocation: CLLocationCoordinate2D = (self.locationManager.location?.coordinate)!
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = myLocation
+            self.mapView.addAnnotation(annotation)
+            
+            annotation.title = "This is my annotation"
+            self.mapView.addAnnotation(annotation)
+            
+           
+            let newArtData: [String: Any] = [
+                "name": artTextField.text!,
+                "lat": myLocation.latitude,
+                "lng": myLocation.longitude
+            ]
+            newArt.setValue(newArtData)
+            
+        })
         
-       // let artLocation = FIRDatabase.database().reference(withPath: "artSpot")
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { _ in })
         
-        let myLocation: CLLocationCoordinate2D = (locationManager.location?.coordinate)!
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = myLocation
-        mapView.addAnnotation(annotation)
-        
-        annotation.title = "This is my annotation"
-        self.mapView.addAnnotation(annotation)
-        
-        //artLocation.setValue(["location": locationManager.location?.coordinate])
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter First Name"
+        }
 
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    
     }
     
     

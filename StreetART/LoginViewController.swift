@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import TextFieldEffects
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -20,7 +21,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+        emailField.text = "Joe@joe.com"
+        passwordField.text = "123ga123"
      
         
 

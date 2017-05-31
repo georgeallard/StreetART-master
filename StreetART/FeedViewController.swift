@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class FeedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -24,9 +25,6 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         fetchPosts()
     }
-    
-   
-
     
     
     func fetchPosts(){
