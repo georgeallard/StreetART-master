@@ -44,7 +44,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UITex
 //        
 //        }
     
-        dbRef = FIRDatabase.database().reference().child("images")
+        dbRef = FIRDatabase.database().reference().child("posts")
         loadDB()
         customImageFlowLayout = CustomImageFlowLayout()
         imageCollection.collectionViewLayout = customImageFlowLayout
@@ -94,6 +94,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UITex
     }
     
     func loadDB() {
+        
         dbRef.observe(FIRDataEventType.value, with: { (snapshot) in
             var newImages = [UserImage]()
             
@@ -117,7 +118,6 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UITex
         
         return images.count
         
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -125,7 +125,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UITex
         
         let image = images[indexPath.row]
 
-    //   cell.imageView.sd_setImage(with: URL(string: image.url), placeholderImage: UIImage(named:"image1"))
+       cell.imageView.sd_setImage(with: URL(string: image.pathToImage), placeholderImage: UIImage(named:"image1"))
         
         return cell
         

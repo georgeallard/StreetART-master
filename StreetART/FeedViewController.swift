@@ -20,6 +20,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         let img = UIImage(named: "streetARNAV")
         navigationController?.navigationBar.setBackgroundImage(img, for: .default)
         
