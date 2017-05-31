@@ -103,6 +103,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                     ref.child("posts").updateChildValues(postFeed)
                     AppDelegate.instance().dismissActivityIndicatos()
                     
+                    
                     self.dismiss(animated: true, completion: nil)
                 }
             })
