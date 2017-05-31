@@ -74,6 +74,10 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                                         }
                                     }
                                     
+                                    
+                                    
+                                   // self.posts = self.posts.filter { $0.postID != posts.postID }
+                                    
                                     self.collectionView.reloadData()
                                 }
                             }

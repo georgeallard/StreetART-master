@@ -93,6 +93,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                                 "author" : FIRAuth.auth()!.currentUser!.displayName!,
                                 "postID" : key] as [String : Any]
                     
+                    
                     let postFeed = ["\(key)" : feed]
                     
                     ref.child("posts").updateChildValues(postFeed)
