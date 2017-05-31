@@ -30,6 +30,10 @@ class drawViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let logo = UIImage(named: "streetARNAV")
+        let imageView = UIImageView(image: logo)
+        self.navigationItem.titleView = imageView
 
         // Do any additional setup after loading the view.
         

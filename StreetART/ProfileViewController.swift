@@ -29,6 +29,10 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UITex
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let logo = UIImage(named: "streetARNAV")
+        let imageView = UIImageView(image: logo)
+        self.navigationItem.titleView = imageView
+        
 //        self.loggedInUser = FIRAuth.auth()?.currentUser
 //        
 //        self.dataBaseRef.child("users").child(self.loggedInUser!.uid).observeSingleEvent(of: .value) { (snapshot:FIRDataSnapshot) in

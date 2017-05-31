@@ -24,6 +24,10 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let logo = UIImage(named: "streetARNAV")
+        let imageView = UIImageView(image: logo)
+        self.navigationItem.titleView = imageView
 
         mapView.delegate = self
         locationManager.requestAlwaysAuthorization()

@@ -30,12 +30,15 @@ class settingsViewController: UIViewController {
     var blue:CGFloat = 0.0
     var brushSize:CGFloat = 5.0
     var opacityValue:CGFloat = 1.0
-    
     var delegate:settingsViewControllerDelegate?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let logo = UIImage(named: "streetARNAV")
+        let imageView = UIImageView(image: logo)
+        self.navigationItem.titleView = imageView
         
         
         drawPreview(red: red, green: green, blue: blue)
