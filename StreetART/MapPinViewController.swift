@@ -40,11 +40,13 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         let alertController = UIAlertController(title: "Name of Art", message: "", preferredStyle: .alert)
         
         let saveAction = UIAlertAction(title: "Save", style: .default, handler: { _ in
+            
             let artTextField = alertController.textFields![0] as UITextField
+            let locationTextField = alertController.textFields![1] as UITextField
+            let typeTextField = alertController.textFields![2] as UITextField
             
             
             let newArt = self.ref.childByAutoId()
-            
             
             
             let myLocation: CLLocationCoordinate2D = (self.locationManager.location?.coordinate)!
@@ -58,6 +60,8 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
            
             let newArtData: [String: Any] = [
                 "name": artTextField.text!,
+                "location": locationTextField.text!,
+                "Type": typeTextField.text!,
                 "lat": myLocation.latitude,
                 "lng": myLocation.longitude
             ]
@@ -68,8 +72,18 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { _ in })
         
         alertController.addTextField { (textField : UITextField!) -> Void in
-            textField.placeholder = "Enter First Name"
+            textField.placeholder = "Enter Art Name"
         }
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Location"
+        }
+       
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Type"
+        }
+
+
 
         alertController.addAction(saveAction)
         alertController.addAction(cancelAction)
