@@ -10,23 +10,40 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class ProfileViewController: UIViewController, UICollectionViewDataSource {
+class ProfileViewController: UIViewController, UICollectionViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var about: UITextField!
     @IBOutlet weak var imageCollection: UICollectionView!
     @IBOutlet weak var profilePicture: UIImageView!
     
+    var loggedInUser: AnyObject?
     var customImageFlowLayout: CustomImageFlowLayout!
     var dataBaseRef: FIRDatabaseReference!
     var storageRef: FIRStorage!
     var images = [UserImage]()
     var dbRef: FIRDatabaseReference!
+ 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        self.loggedInUser = FIRAuth.auth()?.currentUser
+//        
+//        self.dataBaseRef.child("users").child(self.loggedInUser!.uid).observeSingleEvent(of: .value) { (snapshot:FIRDataSnapshot) in
+//    
+//            
+//            if(snapshot.value!["about"] !== nil)
+//            
+//            {
+//                
+//            self.about.text = snapshot.value!["about"] as? String
+//
+//            }
+//        
+//        }
+    
         dbRef = FIRDatabase.database().reference().child("images")
         loadDB()
         customImageFlowLayout = CustomImageFlowLayout()
@@ -36,6 +53,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
        
        dataBaseRef = FIRDatabase.database().reference()
         
+    
         if let userID = FIRAuth.auth()?.currentUser?.uid {
             
             dataBaseRef.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -58,6 +76,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
                         
                         DispatchQueue.main.async {
                             self.profilePicture.image = UIImage(data: data!)
+                            
                             
                         }
                     }) . resume()
@@ -112,7 +131,18 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
         
         
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
+//    @IBAction func aboutDidEndEditing(_ sender: Any) {
+//        
+//        self.dataBaseRef.child("users").child(self.loggedInUser!.uid).child("about").setValue(self.about.text)
+//        
+//        
+//    }
 
 }
 

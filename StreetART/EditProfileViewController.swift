@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import SDWebImage
 import FirebaseAuth
+import TextFieldEffects
 
 
 class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {

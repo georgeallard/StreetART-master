@@ -40,6 +40,21 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     
 
     }
+    
+//    func checkIfUserIsLoggedIn() {
+//        if FIRAuth.auth()?.currentUser?.uid == nil {
+//            perform(#selector(handlelogout), with: nil, afterDelay: 0)
+//        } else {
+//            let uid = FIRAuth.auth()?.currentUser?.uid
+//            FIRDatabase.database().reference().child("users").child(uid!).observe(.value, with: { (snapshot) in
+//                
+//                if let dictionary = snapshot.value as? [String: AnyObject] {
+//                    self.navigationItem.title = dictionary ["name"] as? String
+//                }
+//                
+//                
+//            }, withCancel: nil)
+//        }
 
     @IBAction func selectPressed(_ sender: Any) {
         

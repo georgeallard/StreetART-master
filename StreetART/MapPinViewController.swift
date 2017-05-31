@@ -89,12 +89,17 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         alertController.addAction(cancelAction)
         
         self.present(alertController, animated: true, completion: nil)
+        
+        
     
     }
     
     
     
-   
+    
+    
+    
+    
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else {

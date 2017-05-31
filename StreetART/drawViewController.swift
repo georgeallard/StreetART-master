@@ -9,10 +9,10 @@
 import UIKit
 
 class drawViewController: UIViewController {
-
-    @IBOutlet weak var toolIcon: UIButton!
+   
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var toolIcon: UIBarButtonItem!
     
     var lastPoint = CGPoint.zero
     var swiped = false
@@ -104,10 +104,13 @@ class drawViewController: UIViewController {
         }
     }
 
+  
     @IBAction func reset(_ sender: Any) {
         
         self.imageView.image = nil
     }
+    
+    
  
     
     @IBAction func save(_ sender: Any) {
@@ -128,30 +131,25 @@ class drawViewController: UIViewController {
                 UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             }
         }))
+
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         
         present(actionSheet, animated: true, completion: nil)
     }
-
     
-  
     
     @IBAction func erase(_ sender: Any) {
         
-        
         if (isDrawing) {
             (red,green,blue) = (1,1,1)
-            tool.image = #imageLiteral(resourceName: "icons8-erase_filled")
-            toolIcon.setImage(#imageLiteral(resourceName: "Paintbrush"), for: .normal)
             
         } else {
             (red,green,blue) = (0,0,0)
-            tool.image = #imageLiteral(resourceName: "Paintbrush")
-            toolIcon.setImage(#imageLiteral(resourceName: "icons8-erase_filled"), for: .normal)
-        }
+                  }
         
         isDrawing = !isDrawing
+        
     }
     
   
