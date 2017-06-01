@@ -16,6 +16,7 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     @IBOutlet weak var addArt: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
+    
     var ref = FIRDatabase.database().reference().child("art")
     
     
@@ -33,9 +34,7 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
         mapView.userTrackingMode = .follow
-        
-        loadArtData()
-        
+    
         
 }
 
@@ -97,9 +96,8 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         
         
     
+    
     }
-    
-    
     
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -125,17 +123,6 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         }
         return annotationView
     }
-    
-    
-    
-    func loadArtData(){
-        
-        FIRDatabase.database().reference().child("art")
-       
-   
-    }
-
-    
     
     
     
