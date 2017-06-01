@@ -1358,7 +1358,7 @@
         <scene sceneID="qdo-Lq-qzi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CDx-3V-yOv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icons8-map_marker-1" id="Tye-rU-SP5">
+                    <tabBarItem key="tabBarItem" title="" image="newmap" id="Tye-rU-SP5">
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1379,7 +1379,7 @@
         <scene sceneID="LEa-wK-LAB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bIB-7T-awU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icons8-brush-1" selectedImage="icons8-brush-1" id="Zzd-yi-bnJ">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-chisel_tip_marker" selectedImage="icons8-chisel_tip_marker" id="Zzd-yi-bnJ">
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1411,16 +1411,17 @@
         <image name="greenicon" width="53" height="53"/>
         <image name="icons8-activity_feed_2-2" width="32" height="32"/>
         <image name="icons8-brush-1" width="32" height="32"/>
+        <image name="icons8-chisel_tip_marker" width="32" height="32"/>
         <image name="icons8-conference_call-1" width="32" height="32"/>
         <image name="icons8-erase_filled-1" width="32" height="32"/>
         <image name="icons8-hearts_filled" width="25" height="25"/>
-        <image name="icons8-map_marker-1" width="32" height="32"/>
         <image name="icons8-save-1" width="32" height="32"/>
         <image name="icons8-undo-1" width="32" height="32"/>
         <image name="icons8-user_male_circle-2" width="32" height="32"/>
         <image name="like-1" width="50" height="50"/>
         <image name="login" width="375" height="667"/>
         <image name="newchooseimagebutton" width="205" height="50"/>
+        <image name="newmap" width="32" height="32"/>
         <image name="pinkicon" width="53" height="53"/>
         <image name="postnewbutton" width="205" height="50"/>
         <image name="redicon" width="53" height="53"/>
