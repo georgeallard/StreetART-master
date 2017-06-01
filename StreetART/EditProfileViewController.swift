@@ -36,18 +36,19 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     
+    
     @IBAction func saveProfile(_ sender: Any) {
         
-        updateUsersProfile()
-        
+            updateUsersProfile()
     }
     
-    
-    
+
     @IBAction func cancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-        
+
     }
+    
+    
     
     @IBAction func getPhoto(_ sender: Any) {
         
@@ -90,7 +91,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                             
                             let newValuesForProfile = [
                                 "urlToImage": profilePicture,
-                                "fullname": newFullName,
+                                "full name": newFullName,
                                 "about": about
                             ]
                             

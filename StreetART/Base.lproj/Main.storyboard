@@ -120,6 +120,7 @@
                             <constraint firstItem="MEO-2b-Msr" firstAttribute="top" secondItem="fqp-LG-M40" secondAttribute="bottom" constant="18" id="zRV-Ef-B8B"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="emailField" destination="fqp-LG-M40" id="BQ2-bF-rKG"/>
                         <outlet property="passwordField" destination="MEO-2b-Msr" id="dqD-2c-aoz"/>
@@ -288,20 +289,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qeI-Lv-1GV">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="oA2-Am-Sac">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0I6-Jj-nab">
-                                <rect key="frame" x="344" y="-4" width="50" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="y4H-0r-Cox"/>
-                                </constraints>
-                                <state key="normal" image="icons8-settings_filled-2"/>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Edit Profile" id="PBw-qN-u7d">
                             <connections>
-                                <segue destination="aM7-ap-xzD" kind="presentation" modalTransitionStyle="crossDissolve" id="Fr1-6M-lBf"/>
+                                <segue destination="aM7-ap-xzD" kind="presentation" id="1mW-at-uE4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="about" destination="CXO-h2-ZGW" id="uIF-em-Kxn"/>
@@ -392,6 +386,22 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDo-dg-Iw3">
+                                <rect key="frame" x="184" y="519" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="cancel"/>
+                                <connections>
+                                    <action selector="cancel:" destination="aM7-ap-xzD" eventType="touchUpInside" id="5ap-3H-gso"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOf-af-Pft">
+                                <rect key="frame" x="190" y="481" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="save"/>
+                                <connections>
+                                    <action selector="saveProfile:" destination="aM7-ap-xzD" eventType="touchUpInside" id="fSF-Pu-3DH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -408,6 +418,7 @@
                             <constraint firstItem="qwS-GW-seK" firstAttribute="leading" secondItem="1rW-RD-pqd" secondAttribute="leading" constant="-1" id="wxd-9r-8ou"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="about" destination="1tp-Qb-1kf" id="BYF-Yo-J1O"/>
                         <outlet property="fullName" destination="RIc-gh-GZh" id="R1f-TU-Ukh"/>
@@ -988,6 +999,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ejO-i3-YEn"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="tableview" destination="MOf-5p-Xyx" id="Qnd-fW-zpp"/>
                     </connections>
@@ -999,7 +1011,7 @@
         <!--Upload View Controller-->
         <scene sceneID="BzC-pl-KfM">
             <objects>
-                <viewController id="OQ7-Eh-Olp" customClass="UploadViewController" customModule="StreetART" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="OQ7-Eh-Olp" customClass="UploadViewController" customModule="StreetART" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s8L-ih-M34"/>
                         <viewControllerLayoutGuide type="bottom" id="AFx-Ka-F9W"/>
@@ -1008,43 +1020,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PV9-z9-Dg8">
-                                <rect key="frame" x="20" y="116" width="374" height="343"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="343" id="fna-oW-Ion"/>
-                                </constraints>
-                            </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ah1-Hb-S6b">
-                                <rect key="frame" x="0.0" y="467" width="414" height="69"/>
-                                <state key="normal" image="postButton">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="postPressed:" destination="OQ7-Eh-Olp" eventType="touchUpInside" id="ecr-bI-qNH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GV-to-Oqp">
-                                <rect key="frame" x="0.0" y="390" width="414" height="69"/>
-                                <state key="normal" image="ChooseImage"/>
-                                <connections>
-                                    <action selector="selectPressed:" destination="OQ7-Eh-Olp" eventType="touchUpInside" id="ZfD-79-MiA"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZD9-xd-qht">
+                                <rect key="frame" x="20" y="105" width="374" height="431"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="brickwallblur" translatesAutoresizingMaskIntoConstraints="NO" id="OXQ-eN-V9n">
+                                        <rect key="frame" x="18" y="22" width="338" height="310"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PV9-z9-Dg8">
+                                        <rect key="frame" x="18" y="22" width="338" height="310"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GV-to-Oqp">
+                                        <rect key="frame" x="43" y="340" width="288" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="ChooseImage"/>
+                                        <connections>
+                                            <action selector="selectPressed:" destination="OQ7-Eh-Olp" eventType="touchUpInside" id="ZfD-79-MiA"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ah1-Hb-S6b">
+                                        <rect key="frame" x="43" y="361" width="292" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="postButton">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="postPressed:" destination="OQ7-Eh-Olp" eventType="touchUpInside" id="ecr-bI-qNH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="PV9-z9-Dg8" firstAttribute="trailing" secondItem="sqc-vY-Q1t" secondAttribute="trailingMargin" id="Ds6-gP-Kyo"/>
-                            <constraint firstItem="ah1-Hb-S6b" firstAttribute="leading" secondItem="sqc-vY-Q1t" secondAttribute="leading" id="V3T-rM-tRa"/>
-                            <constraint firstItem="ah1-Hb-S6b" firstAttribute="top" secondItem="PV9-z9-Dg8" secondAttribute="bottom" constant="8" id="W0u-LV-kKp"/>
-                            <constraint firstItem="2GV-to-Oqp" firstAttribute="centerX" secondItem="PV9-z9-Dg8" secondAttribute="centerX" id="Xpa-it-7Nh"/>
-                            <constraint firstItem="2GV-to-Oqp" firstAttribute="top" secondItem="PV9-z9-Dg8" secondAttribute="bottom" constant="-69" id="ess-mo-INg"/>
-                            <constraint firstItem="PV9-z9-Dg8" firstAttribute="leading" secondItem="sqc-vY-Q1t" secondAttribute="leadingMargin" id="pji-g0-d3I"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icons8-brush-1" id="6yi-Si-1rz">
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="postBtn" destination="ah1-Hb-S6b" id="Pm8-ri-UDz"/>
@@ -1054,7 +1070,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3rC-72-jxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5541" y="-1029"/>
+            <point key="canvasLocation" x="5405.7971014492759" y="-1013.3152173913044"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="5c4-EP-Qfv">
@@ -1175,6 +1191,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="GPv-3V-g6i" id="d6b-d5-g1V"/>
@@ -1215,6 +1232,7 @@
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ktm-CK-85Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1236,6 +1254,7 @@
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zso-RJ-vvp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1257,6 +1276,7 @@
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rlw-NS-kzh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1299,6 +1319,7 @@
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dOh-oI-Y3W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1321,6 +1342,7 @@
         <image name="barbrushpage" width="375" height="33"/>
         <image name="blackicon" width="53" height="53"/>
         <image name="blueicon" width="53" height="53"/>
+        <image name="brickwallblur" width="414" height="736"/>
         <image name="changePhoto" width="150" height="35"/>
         <image name="greenicon" width="53" height="53"/>
         <image name="icons8-activity_feed_2-2" width="32" height="32"/>
@@ -1330,7 +1352,6 @@
         <image name="icons8-hearts_filled" width="25" height="25"/>
         <image name="icons8-map_marker-1" width="32" height="32"/>
         <image name="icons8-save-1" width="32" height="32"/>
-        <image name="icons8-settings_filled-2" width="32" height="32"/>
         <image name="icons8-undo-1" width="32" height="32"/>
         <image name="icons8-user_male_circle-2" width="32" height="32"/>
         <image name="like-1" width="50" height="50"/>
