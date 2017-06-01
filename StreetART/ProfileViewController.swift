@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import SDWebImage
 
 class ProfileViewController: UIViewController, UICollectionViewDataSource, UITextFieldDelegate {
     
@@ -17,14 +18,17 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UITex
     @IBOutlet weak var imageCollection: UICollectionView!
     @IBOutlet weak var profilePicture: UIImageView!
     
-    var loggedInUser: AnyObject?
+   
     var customImageFlowLayout: CustomImageFlowLayout!
     var dataBaseRef: FIRDatabaseReference!
     var storageRef: FIRStorage!
     var images = [UserImage]()
     var dbRef: FIRDatabaseReference!
- 
     
+ 
+    override func viewDidAppear(_ animated: Bool) {
+        loadProfileData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,29 +37,19 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UITex
         let imageView = UIImageView(image: logo)
         self.navigationItem.titleView = imageView
         
-//        self.loggedInUser = FIRAuth.auth()?.currentUser
-//        
-//        self.dataBaseRef.child("users").child(self.loggedInUser!.uid).observeSingleEvent(of: .value) { (snapshot:FIRDataSnapshot) in
-//    
-//            
-//            if(snapshot.value!["about"] !== nil)
-//            
-//            {
-//                
-//            self.about.text = snapshot.value!["about"] as? String
-//
-//            }
-//        
-//        }
     
         dbRef = FIRDatabase.database().reference().child("posts")
-        loadDB()
-        customImageFlowLayout = CustomImageFlowLayout()
-        imageCollection.collectionViewLayout = customImageFlowLayout
-        imageCollection.backgroundColor = .white
         
+        loadDB()
+        
+        
+        customImageFlowLayout = CustomImageFlowLayout()
+        
+        imageCollection.collectionViewLayout = customImageFlowLayout
+        
+        imageCollection.backgroundColor = .white
        
-       dataBaseRef = FIRDatabase.database().reference()
+        dataBaseRef = FIRDatabase.database().reference()
         
     
         if let userID = FIRAuth.auth()?.currentUser?.uid {
@@ -81,7 +75,6 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UITex
                         DispatchQueue.main.async {
                             self.profilePicture.image = UIImage(data: data!)
                             
-                            
                         }
                     }) . resume()
                 }
@@ -96,6 +89,11 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UITex
         }
     
     }
+    
+    
+    
+    
+    
     
     func loadDB() {
         
@@ -136,17 +134,30 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UITex
         
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+    func loadProfileData(){
+        
+        if let userID = FIRAuth.auth()?.currentUser?.uid {
+            dataBaseRef.child("users").child(userID).observe(.value, with: { (snapshot) in
+                
+                let values = snapshot.value as? NSDictionary
+                
+                if let profilePicture = values?["urlToImage"] as? String{
+                    
+                    self.profilePicture.sd_setImage(with: URL(string: profilePicture))
+                }
+                
+                self.name.text = values?["full name"] as? String
+                
+                self.about.text = values?["about"] as? String
+                
+                
+            })
+            
+        }
     }
+    
 
-//    @IBAction func aboutDidEndEditing(_ sender: Any) {
-//        
-//        self.dataBaseRef.child("users").child(self.loggedInUser!.uid).child("about").setValue(self.about.text)
-//        
-//        
-//    }
+    
 
 }
 
