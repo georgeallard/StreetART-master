@@ -18,7 +18,6 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     @IBOutlet weak var mapView: MKMapView!
     var ref = FIRDatabase.database().reference().child("art")
     
-    //var #imageLiteral(resourceName: "MapAnnotation") = MKPointAnnotation(
     
       let locationManager = CLLocationManager()
     
@@ -34,6 +33,8 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
         mapView.userTrackingMode = .follow
+        
+        loadArtData()
         
         
 }
@@ -101,10 +102,6 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     
     
-    
-    
-    
-    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else {
             return nil
@@ -128,6 +125,16 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         }
         return annotationView
     }
+    
+    
+    
+    func loadArtData(){
+        
+        FIRDatabase.database().reference().child("art")
+       
+   
+    }
+
     
     
     

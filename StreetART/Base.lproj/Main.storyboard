@@ -588,6 +588,7 @@
                     <connections>
                         <outlet property="imageView" destination="tk6-Mm-w2D" id="Zd5-wN-KcU"/>
                         <outlet property="toolIcon" destination="Hq7-mc-CAY" id="bdK-eE-IkK"/>
+                        <segue destination="OQ7-Eh-Olp" kind="presentation" identifier="UploadDrawing" id="dYT-od-xx4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mw1-WH-t6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1184,12 +1185,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wkv-R2-Asn">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YSJ-59-rus">
-                            <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="OQ7-Eh-Olp" kind="presentation" id="gyH-nS-Hci"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="YSJ-59-rus">
+                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="OQ7-Eh-Olp" kind="presentation" id="gyH-nS-Hci"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="camera" id="0KH-WO-Gw4">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -1365,4 +1371,7 @@
         <image name="whiteicon" width="53" height="53"/>
         <image name="yellowicon" width="53" height="53"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gyH-nS-Hci"/>
+    </inferredMetricsTieBreakers>
 </document>

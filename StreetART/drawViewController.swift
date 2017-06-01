@@ -134,6 +134,12 @@ class drawViewController: UIViewController {
                 UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             }
         }))
+        actionSheet.addAction(UIAlertAction(title: "Upload To Feed", style: .default, handler: { (_) in
+            
+           // self.performSegue(withIdentifier: "UploadDrawing", sender: nil)
+            
+                    }))
+
 
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
@@ -230,6 +236,8 @@ extension drawViewController:UINavigationControllerDelegate,UIImagePickerControl
         
     }
 }
+
+
 
 
 
