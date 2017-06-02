@@ -42,7 +42,7 @@ class drawViewController: UIViewController {
         tool.image = #imageLiteral(resourceName: "Paintbrush")
         self.view.addSubview(tool)
         
-        createAlert(title: "Welcome To Draw", message: "To change brush size/opacity and create a unique colour press settings button. To draw on your own image, press save.")
+        createAlert(title: "Welcome To Draw", message: "To change brush size/opacity and create a unique colour press Brush. To draw on your own image, press save.")
     }
     
     func createAlert (title:String, message:String) {
@@ -118,7 +118,7 @@ class drawViewController: UIViewController {
     
     @IBAction func save(_ sender: Any) {
         
-        let actionSheet = UIAlertController(title: "Pick your option", message: "", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Choose an option!", message: "", preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Pick an image", style: .default, handler: { (_) in
             
             let imagePicker = UIImagePickerController()
@@ -134,11 +134,11 @@ class drawViewController: UIViewController {
                 UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             }
         }))
-        actionSheet.addAction(UIAlertAction(title: "Upload To Feed", style: .default, handler: { (_) in
-            
-           // self.performSegue(withIdentifier: "UploadDrawing", sender: nil)
-            
-                    }))
+//        actionSheet.addAction(UIAlertAction(title: "Upload To Feed", style: .default, handler: { (_) in
+//            
+//           // self.performSegue(withIdentifier: "UploadDrawing", sender: nil)
+//            
+//                    }))
 
 
         

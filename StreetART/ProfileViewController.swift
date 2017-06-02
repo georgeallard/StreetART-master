@@ -14,7 +14,7 @@ import SDWebImage
 class ProfileViewController: UIViewController, UICollectionViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var about: UITextField!
+    @IBOutlet weak var about: UILabel!
     @IBOutlet weak var imageCollection: UICollectionView!
     @IBOutlet weak var profilePicture: UIImageView!
     
