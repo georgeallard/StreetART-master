@@ -69,6 +69,12 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.userImage.downloadImage(from: self.user[indexPath.row].imagePath!)
         checkFollowing(indexPath: indexPath)
         
+        
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.3, animations: {
+            cell.alpha = 1
+        })
+        
         return cell
     }
     

@@ -24,15 +24,15 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UITex
     var storageRef: FIRStorage!
     var images = [UserImage]()
     var dbRef: FIRDatabaseReference!
-    
- 
-    override func viewDidAppear(_ animated: Bool) {
-        loadProfileData()
-    }
+
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+    
         let logo = UIImage(named: "streetARNAV")
         let imageView = UIImageView(image: logo)
         self.navigationItem.titleView = imageView

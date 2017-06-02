@@ -19,6 +19,8 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     var ref = FIRDatabase.database().reference().child("art")
     
+    var artLoc = [art]()
+    
     
       let locationManager = CLLocationManager()
     
@@ -34,9 +36,38 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
         mapView.userTrackingMode = .follow
+        
+//        
+//        ref.observe(.value, with: { snapshot in
+//            self.artLoc.removeAll()
+//            
+//            if annotation = self.mapView.annotation {
+//                
+//                self.mapView.removeAnnotations(annotation)
+//                
+//            }
+//            
+//            for item in snapshot.children {
+//                guard let snapshot = item as? FIRDataSnapshot else { continue }
+//                
+//                let ref = art(snapshot: snapshot)
+//                
+//                self.artLoc.append(art)
+//                
+//                self.addAnnotation(art: artLoc)
+//            }
+//            
+//            self.artLoc()
+//            
+//            
+//        })
+        
+        
+    }
+ 
     
         
-}
+
 
         
     @IBAction func addArt_TouchUpInside(_ sender: Any) {
@@ -94,7 +125,6 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         
         self.present(alertController, animated: true, completion: nil)
         
-        
     
     
     }
@@ -125,6 +155,6 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     }
     
     
-    
+
     
 }
