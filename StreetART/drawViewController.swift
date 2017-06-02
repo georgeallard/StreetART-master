@@ -42,7 +42,7 @@ class drawViewController: UIViewController {
         tool.image = #imageLiteral(resourceName: "Paintbrush")
         self.view.addSubview(tool)
         
-        createAlert(title: "Welcome To Draw", message: "To change brush size/opacity and create a unique colour press Brush. To draw on your own image, press save.")
+        createAlert(title: "Welcome To StreetAR Draw", message: "To change brush size/opacity and create a unique colour press Brush. To draw on your own image, press save.")
     }
     
     func createAlert (title:String, message:String) {
