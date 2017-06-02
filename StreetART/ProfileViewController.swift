@@ -28,6 +28,10 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UITex
     
     override func viewDidLoad() {
         
+        dataBaseRef = FIRDatabase.database().reference()
+       
+        loadProfileData()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
