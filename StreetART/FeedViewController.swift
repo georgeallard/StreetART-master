@@ -39,6 +39,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let users = snapshot.value as! [String : AnyObject]
             
             
+            
             for (_,value) in users {
                 if let uid = value["uid"] as? String {
                     if uid == FIRAuth.auth()?.currentUser?.uid {
@@ -60,7 +61,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                                     for each in self.following {
                                         if each == userID {
                                             let posst = Post()
-                                            if let author = post["author"] as? String, let likes = post["likes"] as? Int, let timestamp = post["timestamp"] as? Int, let pathToImage = post["pathToImage"] as? String, let postID = post["postID"] as? String {
+                                            if let author = post["author"] as? String, let likes = post["likes"] as? Int, let pathToImage = post["pathToImage"] as? String, let postID = post["postID"] as? String, let timestamp = post["timestamp"] as? Int {
                                                 
                                                 posst.author = author
                                                 posst.likes = likes
@@ -75,15 +76,12 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                                                     }
                                                 }
                                                 
-                                                self.posts.sort(by: {$0.timestamp! > $1.timestamp!})
+    
                                                 self.posts.append(posst)
                                             }
                                         }
                                     }
                                     
-                                    
-                                    
-                                   // self.posts = self.posts.filter { $0.postID != posts.postID }
                                     
                                     self.collectionView.reloadData()
                                 }
