@@ -25,7 +25,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let imageView = UIImageView(image: logo)
         self.navigationItem.titleView = imageView
                 
-        
+        fetchPosts()
     }
     
     
@@ -49,9 +49,10 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                             }
                         }
                         self.following.append(FIRAuth.auth()!.currentUser!.uid)
-                       //.childAdded
-                        ref.child("posts").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
                         
+                        ref.child("posts").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
+                            
+                            
                             let postsSnap = snap.value as! [String : AnyObject]
                             
                             
@@ -60,12 +61,11 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                                     for each in self.following {
                                         if each == userID {
                                             let posst = Post()
-                                            if let author = post["author"] as? String, let likes = post["likes"] as? Int, let pathToImage = post["pathToImage"] as? String, let postID = post["postID"] as? String, let timestamp = post["timestamp"] as? Int {
+                                            if let author = post["author"] as? String, let likes = post["likes"] as? Int, let pathToImage = post["pathToImage"] as? String, let postID = post["postID"] as? String {
                                                 
                                                 posst.author = author
                                                 posst.likes = likes
                                                 posst.pathToImage = pathToImage
-                                                posst.timestamp = timestamp
                                                 posst.postID = postID
                                                 posst.userID = userID
                                                 if let people = post["peopleWhoLike"] as? [String : AnyObject] {
