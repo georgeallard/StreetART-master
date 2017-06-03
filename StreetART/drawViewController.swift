@@ -52,7 +52,9 @@ class drawViewController: UIViewController {
             alert.dismiss(animated: true, completion: nil)
             
         }))
-        
+        alert.view.tintColor = UIColor.white  // change text color of the buttons
+        alert.view.backgroundColor = UIColor.black  // change background color
+        alert.view.layer.cornerRadius = 45   // change corner radius
         self.present(alert, animated: true, completion: nil)
     
     }
@@ -118,32 +120,29 @@ class drawViewController: UIViewController {
     @IBAction func save(_ sender: Any) {
         
         let actionSheet = UIAlertController(title: "Choose an option!", message: "", preferredStyle: .actionSheet)
+        actionSheet.view.tintColor = UIColor.white  // change text color of the buttons
+        
+        
         actionSheet.addAction(UIAlertAction(title: "Pick an image", style: .default, handler: { (_) in
-            
             let imagePicker = UIImagePickerController()
             imagePicker.sourceType = .photoLibrary
             imagePicker.allowsEditing = false
             imagePicker.delegate = self
-            
             self.present(imagePicker, animated: true, completion: nil)
-            
         }))
         actionSheet.addAction(UIAlertAction(title: "Save your drawing", style: .default, handler: { (_) in
             if let image = self.imageView.image {
                 UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             }
         }))
-//        actionSheet.addAction(UIAlertAction(title: "Upload To Feed", style: .default, handler: { (_) in
-//            
-//           // self.performSegue(withIdentifier: "UploadDrawing", sender: nil)
-//            
-//                    }))
-
-
-        
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         
         present(actionSheet, animated: true, completion: nil)
+        
+        
+        actionSheet.view.tintColor = UIColor.white  // change text color of the buttons
+        actionSheet.view.backgroundColor = UIColor.black  // change background color
+        actionSheet.view.layer.cornerRadius = 45   // change corner radius
     }
     
     
