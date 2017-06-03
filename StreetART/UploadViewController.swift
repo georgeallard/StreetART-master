@@ -53,7 +53,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
 //            FIRDatabase.database().reference().child("users").child(uid!).observe(.value, with: { (snapshot) in
 //                
 //                if let dictionary = snapshot.value as? [String: AnyObject] {
-//                    self.navigationItem.title = dictionary ["name"] as? String
+//                    self.navigationItem.title = dictionary ["full name"] as? String
 //                }
 //                
 //                

@@ -91,6 +91,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
             
         })
+        
         ref.removeAllObservers()
     }
     
