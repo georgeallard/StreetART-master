@@ -1249,29 +1249,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xjy-3e-bqm">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xjy-3e-bqm">
                                                     <rect key="frame" x="286" y="0.0" width="112" height="112"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="112" id="NY2-dx-THe"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsD-dB-Ka5">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsD-dB-Ka5">
                                                     <rect key="frame" x="15" y="8" width="119" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="119" id="r7j-1D-PQ3"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Xjy-3e-bqm" firstAttribute="top" secondItem="fxp-Q0-cRd" secondAttribute="top" id="2jp-9a-Bqe"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Xjy-3e-bqm" secondAttribute="trailing" constant="8" id="3Ln-wJ-Bst"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Xjy-3e-bqm" secondAttribute="bottom" constant="-0.3333333333333286" id="Uvb-Fz-OWp"/>
-                                                <constraint firstItem="IsD-dB-Ka5" firstAttribute="top" secondItem="fxp-Q0-cRd" secondAttribute="topMargin" id="ew0-eV-wf2"/>
-                                                <constraint firstItem="IsD-dB-Ka5" firstAttribute="leading" secondItem="fxp-Q0-cRd" secondAttribute="leadingMargin" constant="7" id="sE4-rZ-7rg"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="myImage" destination="Xjy-3e-bqm" id="W50-Bu-cJp"/>
@@ -1279,6 +1268,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KWH-Yn-DbL" id="pSm-HZ-Px1"/>
+                                    <outlet property="delegate" destination="KWH-Yn-DbL" id="Vjq-gj-oJW"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
