@@ -58,7 +58,7 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         
     @IBAction func addArt_TouchUpInside(_ sender: Any) {
         
-        let alertController = UIAlertController(title: "Name of Art", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Tag Some Art", message: "Tag local art for all users to see!", preferredStyle: .alert)
         
         let saveAction = UIAlertAction(title: "Save", style: .default, handler: { _ in
             
@@ -91,25 +91,48 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { _ in })
-        
+
         alertController.addTextField { (textField : UITextField!) -> Void in
-            textField.placeholder = "Enter Art Name"
+            textField.placeholder = "Description"
+
+            textField.keyboardAppearance = .dark
+            textField.keyboardType = .default
+            textField.autocorrectionType = .default
+            textField.clearButtonMode = .whileEditing
+            textField.textColor = UIColor.black
         }
         
         alertController.addTextField { (textField : UITextField!) -> Void in
-            textField.placeholder = "Location"
+            textField.placeholder = "Whereabouts?"
+            
+            textField.keyboardAppearance = .dark
+            textField.keyboardType = .default
+            textField.autocorrectionType = .default
+            textField.clearButtonMode = .whileEditing
+            textField.textColor = UIColor.red
         }
        
         alertController.addTextField { (textField : UITextField!) -> Void in
-            textField.placeholder = "Type"
+            textField.placeholder = "What Type?"
+            
+            textField.keyboardAppearance = .dark
+            textField.keyboardType = .default
+            textField.autocorrectionType = .default
+            textField.clearButtonMode = .whileEditing
+            textField.textColor = UIColor.black
         }
 
 
 
         alertController.addAction(saveAction)
         alertController.addAction(cancelAction)
+        alertController.view.tintColor = UIColor.black  // change text color of the buttons
+        alertController.view.backgroundColor = UIColor.white  // change background color
+        alertController.view.layer.cornerRadius = 45   // change corner radius
         
         self.present(alertController, animated: true, completion: nil)
+        
+        
         
         
         
