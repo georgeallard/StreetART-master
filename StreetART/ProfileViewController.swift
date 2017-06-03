@@ -31,7 +31,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UITex
         dataBaseRef = FIRDatabase.database().reference()
        
         loadProfileData()
-        
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,6 +46,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UITex
         
         loadDB()
         
+        loadProfileData()
         
         customImageFlowLayout = CustomImageFlowLayout()
         

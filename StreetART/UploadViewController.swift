@@ -76,11 +76,13 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         let uid = FIRAuth.auth()!.currentUser!.uid
         let ref = FIRDatabase.database().reference()
         let storage = FIRStorage.storage().reference(forURL: "gs://streetart-9f907.appspot.com")
-        
         let key = ref.child("posts").childByAutoId().key
         let imageRef = storage.child("posts").child(uid).child("\(key).jpg")
-        
         let data = UIImageJPEGRepresentation(self.previewImage.image!, 0.6)
+        var Timestamp: TimeInterval {
+            return NSDate().timeIntervalSince1970 * 1000
+        }
+
         
         let uploadTask = imageRef.put(data!, metadata: nil) { (metadata, error) in
             if error != nil {
@@ -96,6 +98,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                                 "likes" : 0,
                                 "author" : FIRAuth.auth()!.currentUser!.displayName!,
                                 "postID" : key] as [String : Any]
+                    
                     
                     
                     let postFeed = ["\(key)" : feed]

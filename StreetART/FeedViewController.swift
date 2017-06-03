@@ -13,6 +13,7 @@ import FirebaseAuth
 class FeedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var timeLabel: UILabel!
     
     var posts = [Post]()
     var following = [String]()
@@ -31,10 +32,12 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func fetchPosts(){
         
         let ref = FIRDatabase.database().reference()
+      
         
         ref.child("users").queryOrderedByKey().observeSingleEvent(of: .value, with: { snapshot in
             
             let users = snapshot.value as! [String : AnyObject]
+            
             
             for (_,value) in users {
                 if let uid = value["uid"] as? String {
@@ -51,24 +54,28 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                             
                             let postsSnap = snap.value as! [String : AnyObject]
                             
+                            
                             for (_,post) in postsSnap {
                                 if let userID = post["userID"] as? String {
                                     for each in self.following {
                                         if each == userID {
                                             let posst = Post()
-                                            if let author = post["author"] as? String, let likes = post["likes"] as? Int, let pathToImage = post["pathToImage"] as? String, let postID = post["postID"] as? String {
+                                            if let author = post["author"] as? String, let likes = post["likes"] as? Int, let timestamp = post["timestamp"] as? Int, let pathToImage = post["pathToImage"] as? String, let postID = post["postID"] as? String {
                                                 
                                                 posst.author = author
                                                 posst.likes = likes
                                                 posst.pathToImage = pathToImage
+                                                posst.timestamp = timestamp
                                                 posst.postID = postID
                                                 posst.userID = userID
                                                 if let people = post["peopleWhoLike"] as? [String : AnyObject] {
                                                     for (_,person) in people {
                                                         posst.peopleWhoLike.append(person as! String)
+                                                        
                                                     }
                                                 }
                                                 
+                                                self.posts.sort(by: {$0.timestamp! > $1.timestamp!})
                                                 self.posts.append(posst)
                                             }
                                         }
@@ -117,5 +124,8 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         return cell
     }
-    
+
+
+
+
 }
