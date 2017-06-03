@@ -19,10 +19,13 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     var ref = FIRDatabase.database().reference().child("art")
     
-    var artLoc = [art]()
+    var annotation = MKAnnotationView()
     
+    var artDrops = [art]()
+
+    var pointAnnotation = MKPointAnnotation()
     
-      let locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,35 +40,18 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         locationManager.startUpdatingLocation()
         mapView.userTrackingMode = .follow
         
-//        
-//        ref.observe(.value, with: { snapshot in
-//            self.artLoc.removeAll()
-//            
-//            if annotation = self.mapView.annotation {
-//                
-//                self.mapView.removeAnnotations(annotation)
-//                
-//            }
-//            
-//            for item in snapshot.children {
-//                guard let snapshot = item as? FIRDataSnapshot else { continue }
-//                
-//                let ref = art(snapshot: snapshot)
-//                
-//                self.artLoc.append(art)
-//                
-//                self.addAnnotation(art: artLoc)
-//            }
-//            
-//            self.artLoc()
-//            
-//            
-//        })
+       // loadCustomLocations()
+        
+        let ArtIcon = MKPointAnnotation()
+        
+        mapView.addAnnotation(ArtIcon)
         
         
     }
  
-    
+    override func viewDidAppear(_ animated: Bool) {
+          //  self.loadCustomLocations()
+    }
         
 
 
@@ -85,14 +71,13 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             
             
             let myLocation: CLLocationCoordinate2D = (self.locationManager.location?.coordinate)!
+            
             let annotation = MKPointAnnotation()
+            
             annotation.coordinate = myLocation
+            
             self.mapView.addAnnotation(annotation)
             
-            annotation.title = "This is my annotation"
-            self.mapView.addAnnotation(annotation)
-            
-           
             let newArtData: [String: Any] = [
                 "name": artTextField.text!,
                 "location": locationTextField.text!,
@@ -100,6 +85,7 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                 "lat": myLocation.latitude,
                 "lng": myLocation.longitude
             ]
+           
             newArt.setValue(newArtData)
             
         })
@@ -125,8 +111,9 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         
         self.present(alertController, animated: true, completion: nil)
         
-    
-    
+        
+        
+        
     }
     
     
@@ -152,9 +139,86 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             annotationView.image = UIImage(named: "MapAnnotation")
         }
         return annotationView
+        
+        
+
     }
     
     
-
     
+    
+    
+//    func CreateAnnotation(artDrops: art) {
+//        
+//        
+//        let point = artDrops()
+//        
+//        point.name = art.name
+//        
+//        point.coordinate = art.coordinate
+//        
+//        point.location = art.location
+//        
+//        point.type = art.type
+//        
+//        mapView.addAnnotation(point as! MKAnnotation)
+//        
+//        mapView.selectAnnotation(point as! MKAnnotation, animated: true)
+//        
+//    }
+//    
+//
+//    
+////    func loadCustomLocations() {
+////        
+////        ref.observe(.childAdded, with: { snapshot in
+////            
+////            let lat = (snapshot.value as AnyObject!)!["lat"] as! String!
+////            let lng = (snapshot.value as AnyObject!)!["lg"] as! String!
+////            let name = (snapshot.value as AnyObject!)!["name"] as! String!
+////            let type = (snapshot.value as AnyObject!)!["type"] as! String!
+////            let location = (snapshot.value as AnyObject!)!["location"] as! String!
+////            
+////            let annotation = addAnno(name: name!, coordinate: CLLocationCoordinate2D(latitude: lat!, longitude: lng!), type: type!, location: location!)
+////            
+////            //my annotationView is my custom class for annotations.
+////            self.mapView.addAnnotation(self.addAnno as MKAnnotation)
+////            
+////            print(snapshot)
+////            
+////        })}
+////        
+////        
+////        
+////        
+////        
+////        
+////    }
+//
+//    
+//    
+//    func loadCustomLocations() {
+//        
+//        FIRDatabase.database().reference(withPath: "art")
+//        
+//        let artLoc = FIRDatabase.database().reference(withPath: "art")
+//        
+//        artLoc.observe(.value, with: { snapshot in
+//            
+//            
+//            for item in snapshot.children {
+//                guard let snapshot = item as? FIRDataSnapshot else { continue }
+//                
+//                let ref = art(snapshot: snapshot)
+//                
+//                print(snapshot)
+//                
+//                self.artDrops.append(ref)
+//                
+//                self.CreateAnnotation(artDrops: art)
+//                
+//            }
+//        })
+//    }
+
 }

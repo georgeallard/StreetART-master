@@ -31,9 +31,11 @@ class art {
         
         coordinate = CLLocationCoordinate2D(latitude: snapshotValue["lat"] as! Double, longitude: snapshotValue["lng"] as! Double)
         
-        type = snapshotValue["type"] as! String
+     //   type = snapshotValue["type"] as! String
        
 
     }
+    
+
     
 }

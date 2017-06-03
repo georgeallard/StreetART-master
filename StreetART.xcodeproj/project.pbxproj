@@ -78,6 +78,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D1319231EE2D76F00FDAEE6 /* Feed/Upload */ = {
+			isa = PBXGroup;
+			children = (
+				C8534F291EC5F008001C024A /* UploadViewController.swift */,
+				C854B5D81EC60389009DB1F1 /* FeedViewController.swift */,
+			);
+			name = Feed/Upload;
+			sourceTree = "<group>";
+		};
+		0D1319241EE2D79400FDAEE6 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				C84103EA1EC0A63300138044 /* UsersViewController.swift */,
+			);
+			name = Users;
+			sourceTree = "<group>";
+		};
 		19A22416818703350F05ED32 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,16 +151,13 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
-		C881B4931ECB101000877E9C /* Sign Up / Photo */ = {
+		C881B4931ECB101000877E9C /* Sign Up  */ = {
 			isa = PBXGroup;
 			children = (
-				C84103EA1EC0A63300138044 /* UsersViewController.swift */,
 				C8D260811EBFD06D0091851A /* SignUpViewController.swift */,
 				C88E9FDE1EC0827F00799228 /* LoginViewController.swift */,
-				C8534F291EC5F008001C024A /* UploadViewController.swift */,
-				C854B5D81EC60389009DB1F1 /* FeedViewController.swift */,
 			);
-			name = "Sign Up / Photo";
+			name = "Sign Up ";
 			sourceTree = "<group>";
 		};
 		C8911BB81ED4665F009E9624 /* Draw */ = {
@@ -176,10 +190,12 @@
 		C8EE0B6A1EB8AAF000E7575B /* StreetART */ = {
 			isa = PBXGroup;
 			children = (
-				C881B4931ECB101000877E9C /* Sign Up / Photo */,
+				0D1319241EE2D79400FDAEE6 /* Users */,
+				C881B4931ECB101000877E9C /* Sign Up  */,
 				C881B4921ECB0FF000877E9C /* Profile */,
 				C84103EE1EC0AC6900138044 /* Objects */,
 				C84103ED1EC0AC4200138044 /* Custom Cell */,
+				0D1319231EE2D76F00FDAEE6 /* Feed/Upload */,
 				C84103EC1EC0AC0F00138044 /* Map Tag */,
 				C8911BB81ED4665F009E9624 /* Draw */,
 				C8EE0B6B1EB8AAF000E7575B /* AppDelegate.swift */,

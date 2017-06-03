@@ -67,9 +67,9 @@ class settingsViewController: UIViewController {
             delegate?.settingsViewControllerDidFinish(self)
         }
         
-        dismiss(animated: true, completion: nil)
-
+        //dismiss(animated: true, completion: nil)
     }
+   
     
     
     @IBAction func brushSizeChanged(_ sender: Any) {

@@ -49,10 +49,9 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                             }
                         }
                         self.following.append(FIRAuth.auth()!.currentUser!.uid)
-                        
+                       //.childAdded
                         ref.child("posts").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
-                            
-                            
+                        
                             let postsSnap = snap.value as! [String : AnyObject]
                             
                             
