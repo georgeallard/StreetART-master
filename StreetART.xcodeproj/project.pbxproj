@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D13192E1EE36A7A00FDAEE6 /* SocialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D13192D1EE36A7A00FDAEE6 /* SocialTableViewController.swift */; };
 		C82D16321ED5C57F00BA2D76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C82D16311ED5C57F00BA2D76 /* Images.xcassets */; };
 		C83A31941ED6E804006A729A /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A31931ED6E804006A729A /* Art.swift */; };
 		C83A31961ED6F368006A729A /* imageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A31951ED6F368006A729A /* imageCollectionViewCell.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D13192D1EE36A7A00FDAEE6 /* SocialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialTableViewController.swift; sourceTree = "<group>"; };
 		0F0355D0F90A583574C8BBF6 /* Pods_StreetART.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreetART.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C82D16311ED5C57F00BA2D76 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C83A31931ED6E804006A729A /* Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Art.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				C84103EC1EC0AC0F00138044 /* Map Tag */,
 				C8911BB81ED4665F009E9624 /* Draw */,
 				C8EE0B6B1EB8AAF000E7575B /* AppDelegate.swift */,
+				0D13192D1EE36A7A00FDAEE6 /* SocialTableViewController.swift */,
 				C8EE0B6F1EB8AAF000E7575B /* Main.storyboard */,
 				C8BA08031EDDB16E008D1079 /* MyTabBarController.swift */,
 				C8EE0B741EB8AAF000E7575B /* LaunchScreen.storyboard */,
@@ -338,6 +341,7 @@
 				C881B4971ECB39FC00877E9C /* EditProfileViewController.swift in Sources */,
 				C84103E91EC0A51500138044 /* UserCell.swift in Sources */,
 				C8534F2A1EC5F008001C024A /* UploadViewController.swift in Sources */,
+				0D13192E1EE36A7A00FDAEE6 /* SocialTableViewController.swift in Sources */,
 				C854B5D91EC60389009DB1F1 /* FeedViewController.swift in Sources */,
 				C88E9FDF1EC0827F00799228 /* LoginViewController.swift in Sources */,
 				C8911BBA1ED48DA5009E9624 /* settingsViewController.swift in Sources */,

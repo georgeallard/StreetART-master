@@ -28,12 +28,7 @@ class LoginViewController: UIViewController {
 
     }
     
-   // func dismissKeyboard(_ emailField: UITextField) -> Bool {
-        
-     //   emailField.resignFirstResponder()
-       // return true
-        
-    //}
+  
 
     
     @IBAction func LoginPressed(_ sender: Any) {
@@ -61,5 +56,6 @@ class LoginViewController: UIViewController {
         
     }
     
+         
     
 }
