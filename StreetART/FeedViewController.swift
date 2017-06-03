@@ -25,7 +25,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let imageView = UIImageView(image: logo)
         self.navigationItem.titleView = imageView
                 
-        fetchPosts()
+        
     }
     
     

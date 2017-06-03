@@ -13,7 +13,7 @@ import FirebaseAuth
 import TextFieldEffects
 
 
-class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     
     @IBOutlet weak var profilePicture: UIImageView!
@@ -35,7 +35,11 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     
-    
+    private func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        about.resignFirstResponder()
+        return true;
+    }
     
     @IBAction func saveProfile(_ sender: Any) {
         
