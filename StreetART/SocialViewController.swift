@@ -8,13 +8,39 @@
 
 import UIKit
 
-class SocialViewController: UIViewController {
+class SocialViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    let imagesOfWeb = ["streetartweb"]
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return (imagesOfWeb.count)
+    }
+
+    
+
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SocialTableViewCell
+        
+        cell.myImage.image = UIImage(named: (imagesOfWeb[indexPath.row] + ".jpg"))
+        
+        cell.myLabel.text = imagesOfWeb[indexPath.row]
+        
+        return (cell)
+        
+    }
+
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

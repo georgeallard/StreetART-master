@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D1319301EE36E2D00FDAEE6 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D13192F1EE36E2D00FDAEE6 /* SocialViewController.swift */; };
+		0D1319321EE371D800FDAEE6 /* SocialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1319311EE371D800FDAEE6 /* SocialTableViewCell.swift */; };
 		C82D16321ED5C57F00BA2D76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C82D16311ED5C57F00BA2D76 /* Images.xcassets */; };
 		C83A31941ED6E804006A729A /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A31931ED6E804006A729A /* Art.swift */; };
 		C83A31961ED6F368006A729A /* imageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83A31951ED6F368006A729A /* imageCollectionViewCell.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		0D13192F1EE36E2D00FDAEE6 /* SocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
+		0D1319311EE371D800FDAEE6 /* SocialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialTableViewCell.swift; sourceTree = "<group>"; };
 		0F0355D0F90A583574C8BBF6 /* Pods_StreetART.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreetART.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C82D16311ED5C57F00BA2D76 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C83A31931ED6E804006A729A /* Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Art.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				C8911BB81ED4665F009E9624 /* Draw */,
 				C8EE0B6B1EB8AAF000E7575B /* AppDelegate.swift */,
 				C8EE0B6F1EB8AAF000E7575B /* Main.storyboard */,
+				0D1319311EE371D800FDAEE6 /* SocialTableViewCell.swift */,
 				0D13192F1EE36E2D00FDAEE6 /* SocialViewController.swift */,
 				C8BA08031EDDB16E008D1079 /* MyTabBarController.swift */,
 				C8EE0B741EB8AAF000E7575B /* LaunchScreen.storyboard */,
@@ -345,6 +348,7 @@
 				C88E9FDF1EC0827F00799228 /* LoginViewController.swift in Sources */,
 				C8911BBA1ED48DA5009E9624 /* settingsViewController.swift in Sources */,
 				C83A319A1ED7119B006A729A /* UserImage.swift in Sources */,
+				0D1319321EE371D800FDAEE6 /* SocialTableViewCell.swift in Sources */,
 				C84103F01EC0ACA500138044 /* User.swift in Sources */,
 				0D1319301EE36E2D00FDAEE6 /* SocialViewController.swift in Sources */,
 				C8BA08041EDDB16E008D1079 /* MyTabBarController.swift in Sources */,

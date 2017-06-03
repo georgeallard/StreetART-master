@@ -1225,10 +1225,10 @@
             </objects>
             <point key="canvasLocation" x="5405.7971014492759" y="-1013.3152173913044"/>
         </scene>
-        <!--View Controller-->
+        <!--Social View Controller-->
         <scene sceneID="v6d-qe-Dw8">
             <objects>
-                <viewController id="KWH-Yn-DbL" sceneMemberID="viewController">
+                <viewController id="KWH-Yn-DbL" customClass="SocialViewController" customModule="StreetART" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="orq-Bp-WOL"/>
                         <viewControllerLayoutGuide type="bottom" id="UQ8-rC-j9l"/>
@@ -1237,10 +1237,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aJS-8F-LCJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aJS-8F-LCJ">
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="120" id="P8T-hf-2kO" customClass="SocialTableViewCell" customModule="StreetART" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P8T-hf-2kO" id="fxp-Q0-cRd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xjy-3e-bqm">
+                                                    <rect key="frame" x="286" y="0.0" width="112" height="112"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="112" id="NY2-dx-THe"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsD-dB-Ka5">
+                                                    <rect key="frame" x="15" y="8" width="119" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="119" id="r7j-1D-PQ3"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Xjy-3e-bqm" firstAttribute="top" secondItem="fxp-Q0-cRd" secondAttribute="top" id="2jp-9a-Bqe"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Xjy-3e-bqm" secondAttribute="trailing" constant="8" id="3Ln-wJ-Bst"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Xjy-3e-bqm" secondAttribute="bottom" constant="-0.3333333333333286" id="Uvb-Fz-OWp"/>
+                                                <constraint firstItem="IsD-dB-Ka5" firstAttribute="top" secondItem="fxp-Q0-cRd" secondAttribute="topMargin" id="ew0-eV-wf2"/>
+                                                <constraint firstItem="IsD-dB-Ka5" firstAttribute="leading" secondItem="fxp-Q0-cRd" secondAttribute="leadingMargin" constant="7" id="sE4-rZ-7rg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="myImage" destination="Xjy-3e-bqm" id="W50-Bu-cJp"/>
+                                            <outlet property="myLabel" destination="IsD-dB-Ka5" id="n1H-l3-28c"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
