@@ -12,11 +12,21 @@ class SocialViewController: UIViewController, UITableViewDataSource, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    
 
         // Do any additional setup after loading the view.
     }
     
-    //let aboutWebsites = ["hi"]
+
+    let aboutWebsites = ["Bristol's street art scene is extremely diverse and has many talented street artists at its forefront. This website aims to catalogue past and present work by collecting photographs and logging the location of these street art pieces.",
+                         "We think the World is slowly starting to wake up to why our cities shold be painted and steps we can take to get there. We want new conversations around public space and participation. The future is painted.",
+                         "Faile",
+                         "Gaia",
+                         "DABSMYLA",
+                         "OSGEMEOS",
+                         "Retna",
+                         "Phlegm"]
     
     let imagesOfWeb = ["Bristol Street Art", "Global Street Art", "Faile", "Gaia", "DABSMYLA", "OSGEMEOS", "Retna", "Phlegm"]
     
@@ -38,6 +48,7 @@ class SocialViewController: UIViewController, UITableViewDataSource, UITableView
         
         cell.myLabel.text = imagesOfWeb[indexPath.row]
        
+        cell.about.text = aboutWebsites[indexPath.row]
     
         cell.alpha = 0
         UIView.animate(withDuration: 0.3, animations: {

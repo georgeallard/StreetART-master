@@ -24,4 +24,12 @@ class SocialTableViewCell: UITableViewCell {
     @IBOutlet weak var myImage: UIImageView!
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var about: UILabel!
+    @IBOutlet weak var urlButton: UIButton!
+
+    
+    @IBAction func urlButton(_ sender: Any) {
+        if let url = NSURL(string: "http://uk.complex.com/style/2012/07/the-10-coolest-street-artist-websites/"){
+            UIApplication.shared.openURL(url as URL)
+        }
+    }
 }
