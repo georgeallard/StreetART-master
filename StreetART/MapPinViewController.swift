@@ -55,6 +55,8 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         mapView.addAnnotation(ArtIcon)
         
         loadCustomLocations()
+        
+        addAnnotation()
     }
 
         
@@ -163,11 +165,19 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
 //
 
  
+    func addAnnotation() {
+        
+        
+        
+        
+        
+        
+        
+        
+    }
     
     
-    
-    
-    
+
     func loadCustomLocations() {
         
         FIRDatabase.database().reference(withPath: "art")
@@ -186,7 +196,7 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                 
                 self.artDrops.append(ref)
                 
-         //     self.makeAnnotation(artDrops: art)
+               // self.addAnnotation(artDrops: art)
                 
                 
             }
