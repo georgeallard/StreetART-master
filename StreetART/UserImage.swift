@@ -12,6 +12,7 @@ import FirebaseDatabase
 struct UserImage {
     
     let key: String!
+    let uid: String!
     let pathToImage: String!
     
     let itemRef: FIRDatabaseReference?
@@ -20,11 +21,13 @@ struct UserImage {
         self.key = key
         self.pathToImage = url
         self.itemRef = nil
+        self.uid = key
     }
     
     init(snapshot:FIRDataSnapshot) {
         key = snapshot.key
         itemRef = snapshot.ref
+        uid = snapshot.key
         
         let snapshotValue = snapshot.value as? NSDictionary
         

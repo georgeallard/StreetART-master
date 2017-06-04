@@ -69,6 +69,15 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     }
     
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
+    
     @IBAction func postPressed(_ sender: Any) {
         
          AppDelegate.instance().showActivityIndicator()

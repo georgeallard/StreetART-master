@@ -25,9 +25,18 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let imageView = UIImageView(image: logo)
         self.navigationItem.titleView = imageView
                 
-        fetchPosts()
+      //  fetchPosts()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        fetchPosts()
+        
+      //  self.collectionView.reloadData()
+        
+    }
+
     
     func fetchPosts(){
         
@@ -77,12 +86,15 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                                                 
     
                                                 self.posts.append(posst)
+                                                
+                                                
+                                                self.collectionView.reloadData()
                                             }
                                         }
                                     }
                                     
                                     
-                                    self.collectionView.reloadData()
+                                  //  self.collectionView.reloadData()
                                 }
                             }
                         })

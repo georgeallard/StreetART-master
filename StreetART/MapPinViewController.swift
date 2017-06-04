@@ -162,9 +162,6 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
 //        
 //
 
-    
-    
- 
     func loadCustomLocations() {
         
         FIRDatabase.database().reference(withPath: "art")
