@@ -21,12 +21,12 @@ class SocialViewController: UIViewController, UITableViewDataSource, UITableView
 
     let aboutWebsites = ["Bristol's street art scene is extremely diverse and has many talented street artists at its forefront. This website aims to catalogue past and present work by collecting photographs and logging the location of these street art pieces.",
                          "We think the World is slowly starting to wake up to why our cities shold be painted and steps we can take to get there. We want new conversations around public space and participation. The future is painted.",
-                         "Faile",
-                         "Gaia",
-                         "DABSMYLA",
-                         "OSGEMEOS",
-                         "Retna",
-                         "Phlegm"]
+                         "FAILE's website starts out looking like a simple blog. Don't be fooled. Investigate fully and you'll be rewarded with multiple galleries and brilliant images. Need more, you can buy the FAILE Temple Book direct too.",
+                         "Baltimore's Gaia has a paired down, direct website that properly highlights street work from 2007 to the present. There is also space for gallery work, the Legacy project, specific commissions, and resume. While the design might not wow, it perfectly articulates the activity of one of street art's most thoughtful participants.",
+                         "Australia's finest street art couple not only kill it on the street, they know how to captivate on the web as well. Their site includes all of their varied work. The associated blog shares some laughs and news of their friends too. Plus, if you want to have some DabsMyla in your own home, they've got a store to sort you out.",
+                         "With the support of the family, and the arrival of Hip Hop culture in Brazil in the 80's, OSGEMEOS found a direct connection with its magical and dynamic universe and a way of communicating with the public.",
+                         "Retna's site wins with a full screen slide show, offering close up works of his calligraphy-based graffiti. Along the journey you'll see his work on planes, in print, and on the side of buildings. There are also videos on the site.",
+                         "Phlegm is getting well known. Phlegm is also prolific. His site doesn't have many bells and whistles, nor does it require any. Instead, you just get frequent updates of outdoor painting and smaller scale drawings that never fail to entertain and amuse."]
     
     let imagesOfWeb = ["Bristol Street Art", "Global Street Art", "Faile", "Gaia", "DABSMYLA", "OSGEMEOS", "Retna", "Phlegm"]
     
