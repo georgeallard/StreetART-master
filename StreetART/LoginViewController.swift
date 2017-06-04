@@ -11,7 +11,7 @@ import Firebase
 import TextFieldEffects
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -20,15 +20,26 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.emailField.delegate = self
+        
         // Do any additional setup after loading the view.
         emailField.text = "Joe@joe.com"
         passwordField.text = "123ga123"
      
-        
-
     }
     
-  
+  //Hide Keyboard Touch
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+   // Return Key 
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailField.resignFirstResponder()
+        return(true)
+    }
 
     
     @IBAction func LoginPressed(_ sender: Any) {

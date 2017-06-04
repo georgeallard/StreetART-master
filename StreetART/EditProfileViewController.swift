@@ -27,7 +27,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
     
-
+        
+         self.fullName.delegate = self
+        
          dataBaseRef = FIRDatabase.database().reference()
          storageRef = FIRStorage.storage().reference()
         
@@ -35,11 +37,23 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     
-    private func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
-    {
-        about.resignFirstResponder()
-        return true;
+    
+    //Hide Keyboard Touch
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
+    
+    // Return Key
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        fullName.resignFirstResponder()
+        return(true)
+    }
+    
+    
+    
+    
     
     @IBAction func saveProfile(_ sender: Any) {
         

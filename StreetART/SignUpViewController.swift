@@ -11,7 +11,7 @@ import Firebase
 import TextFieldEffects
 import FirebaseAuth
 
-class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -29,6 +29,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
       
+        self.nameField.delegate = self
         
         picker.delegate = self
         
@@ -39,6 +40,20 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         
    
         
+    }
+    
+    
+    //Hide Keyboard Touch
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    // Return Key
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailField.resignFirstResponder()
+        return(true)
     }
 
 
