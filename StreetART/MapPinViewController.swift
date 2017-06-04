@@ -27,6 +27,8 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     let locationManager = CLLocationManager()
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +42,7 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         locationManager.startUpdatingLocation()
         mapView.userTrackingMode = .follow
         
-       // loadCustomLocations()
+        loadCustomLocations()
         
         let ArtIcon = MKPointAnnotation()
         
@@ -68,7 +70,6 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             
             
             let newArt = self.ref.childByAutoId()
-            
             
             let myLocation: CLLocationCoordinate2D = (self.locationManager.location?.coordinate)!
             
@@ -219,29 +220,29 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
 ////    }
 //
 //    
-//    
-//    func loadCustomLocations() {
-//        
-//        FIRDatabase.database().reference(withPath: "art")
-//        
-//        let artLoc = FIRDatabase.database().reference(withPath: "art")
-//        
-//        artLoc.observe(.value, with: { snapshot in
-//            
-//            
-//            for item in snapshot.children {
-//                guard let snapshot = item as? FIRDataSnapshot else { continue }
-//                
-//                let ref = art(snapshot: snapshot)
-//                
-//                print(snapshot)
-//                
-//                self.artDrops.append(ref)
-//                
+    
+    func loadCustomLocations() {
+        
+        FIRDatabase.database().reference(withPath: "art")
+        
+        let artLoc = FIRDatabase.database().reference(withPath: "art")
+        
+        artLoc.observe(.value, with: { snapshot in
+            
+            
+            for item in snapshot.children {
+                guard let snapshot = item as? FIRDataSnapshot else { continue }
+                
+                let ref = art(snapshot: snapshot)
+                
+                print(snapshot)
+                
+                self.artDrops.append(ref)
+//
 //                self.CreateAnnotation(artDrops: art)
-//                
-//            }
-//        })
-//    }
+                
+            }
+        })
+    }
 
 }

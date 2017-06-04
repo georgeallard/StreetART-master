@@ -1262,26 +1262,20 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsD-dB-Ka5">
-                                                    <rect key="frame" x="15" y="8" width="165" height="21"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
+                                                    <rect key="frame" x="14" y="30" width="264" height="38"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="25"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFP-xx-3qN">
-                                                    <rect key="frame" x="15" y="37" width="263" height="75"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="IsD-dB-Ka5" firstAttribute="top" secondItem="fxp-Q0-cRd" secondAttribute="topMargin" id="AwX-rF-VD9"/>
+                                                <constraint firstItem="IsD-dB-Ka5" firstAttribute="top" secondItem="fxp-Q0-cRd" secondAttribute="topMargin" constant="22" id="5Kn-on-cyY"/>
+                                                <constraint firstItem="Xjy-3e-bqm" firstAttribute="leading" secondItem="IsD-dB-Ka5" secondAttribute="trailing" constant="8" symbolic="YES" id="O9V-uw-RHI"/>
+                                                <constraint firstItem="IsD-dB-Ka5" firstAttribute="leading" secondItem="fxp-Q0-cRd" secondAttribute="leadingMargin" constant="6" id="Van-Rw-LnH"/>
                                                 <constraint firstItem="Xjy-3e-bqm" firstAttribute="top" secondItem="fxp-Q0-cRd" secondAttribute="top" id="bFb-He-DUx"/>
-                                                <constraint firstItem="Xjy-3e-bqm" firstAttribute="leading" secondItem="IsD-dB-Ka5" secondAttribute="trailing" constant="106" id="hco-mT-Y81"/>
                                                 <constraint firstAttribute="trailing" secondItem="Xjy-3e-bqm" secondAttribute="trailing" constant="16" id="l1v-8e-VJk"/>
-                                                <constraint firstItem="IsD-dB-Ka5" firstAttribute="leading" secondItem="fxp-Q0-cRd" secondAttribute="leadingMargin" constant="7" id="lvi-W5-2Yr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="IsD-dB-Ka5" secondAttribute="bottom" constant="44" id="qcJ-6s-GOh"/>
                                                 <constraint firstAttribute="bottom" secondItem="Xjy-3e-bqm" secondAttribute="bottom" constant="8" id="ujM-ft-Cba"/>
                                             </constraints>
                                         </tableViewCellContentView>
