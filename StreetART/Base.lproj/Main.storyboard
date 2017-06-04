@@ -1263,7 +1263,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRC-hj-cuy">
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRC-hj-cuy">
                                                     <rect key="frame" x="8" y="30" width="270" height="112"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="270" id="YfU-uW-nVj"/>
@@ -1286,11 +1286,14 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5h-Ro-h4g">
-                                                    <rect key="frame" x="0.0" y="143" width="91" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5h-Ro-h4g">
+                                                    <rect key="frame" x="195" y="135" width="91" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="91" id="RQI-Gd-k2I"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
                                                     <state key="normal" title="See more...">
-                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="urlButton:" destination="P8T-hf-2kO" eventType="touchUpInside" id="3Ug-gv-vx7"/>
@@ -1305,9 +1308,12 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="aRC-hj-cuy" secondAttribute="bottom" constant="23" id="Fog-Hu-olD"/>
                                                 <constraint firstItem="Xjy-3e-bqm" firstAttribute="trailing" secondItem="fxp-Q0-cRd" secondAttribute="trailingMargin" id="KgS-NE-91c"/>
                                                 <constraint firstItem="aRC-hj-cuy" firstAttribute="top" secondItem="IsD-dB-Ka5" secondAttribute="bottom" constant="1" id="agN-7j-1nR"/>
+                                                <constraint firstItem="c5h-Ro-h4g" firstAttribute="leading" secondItem="fxp-Q0-cRd" secondAttribute="leading" constant="195" id="llv-n1-YiS"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Xjy-3e-bqm" secondAttribute="bottom" constant="23" id="nLf-r1-0E6"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="IsD-dB-Ka5" secondAttribute="trailing" constant="128" id="pYO-6s-ed0"/>
+                                                <constraint firstItem="c5h-Ro-h4g" firstAttribute="top" secondItem="aRC-hj-cuy" secondAttribute="bottom" constant="-7" id="qLb-AP-7cA"/>
                                                 <constraint firstItem="IsD-dB-Ka5" firstAttribute="top" secondItem="fxp-Q0-cRd" secondAttribute="topMargin" id="qnJ-xk-XbV"/>
+                                                <constraint firstAttribute="bottom" secondItem="c5h-Ro-h4g" secondAttribute="bottom" constant="8" id="tH3-7i-Bzm"/>
                                                 <constraint firstItem="Xjy-3e-bqm" firstAttribute="top" secondItem="fxp-Q0-cRd" secondAttribute="topMargin" constant="22" id="zRd-af-EeY"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1332,7 +1338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIW-5i-If8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4469.5652173913049" y="-1697.2826086956522"/>
+            <point key="canvasLocation" x="4483" y="-1699"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="5c4-EP-Qfv">

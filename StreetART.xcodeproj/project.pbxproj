@@ -99,6 +99,23 @@
 			name = Users;
 			sourceTree = "<group>";
 		};
+		0D9365E21EE4883200100F2F /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C8BA08031EDDB16E008D1079 /* MyTabBarController.swift */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
+		0D9365E31EE4884A00100F2F /* Social View */ = {
+			isa = PBXGroup;
+			children = (
+				0D13192F1EE36E2D00FDAEE6 /* SocialViewController.swift */,
+				0D1319311EE371D800FDAEE6 /* SocialTableViewCell.swift */,
+			);
+			name = "Social View";
+			sourceTree = "<group>";
+		};
 		19A22416818703350F05ED32 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,8 +184,8 @@
 		C8911BB81ED4665F009E9624 /* Draw */ = {
 			isa = PBXGroup;
 			children = (
-				C8911BB61ED46658009E9624 /* drawViewController.swift */,
 				C8911BB91ED48DA5009E9624 /* settingsViewController.swift */,
+				C8911BB61ED46658009E9624 /* drawViewController.swift */,
 			);
 			name = Draw;
 			sourceTree = "<group>";
@@ -202,11 +219,10 @@
 				0D1319231EE2D76F00FDAEE6 /* Feed/Upload */,
 				C84103EC1EC0AC0F00138044 /* Map Tag */,
 				C8911BB81ED4665F009E9624 /* Draw */,
+				0D9365E31EE4884A00100F2F /* Social View */,
+				0D9365E21EE4883200100F2F /* TabBar */,
 				C8EE0B6B1EB8AAF000E7575B /* AppDelegate.swift */,
 				C8EE0B6F1EB8AAF000E7575B /* Main.storyboard */,
-				0D1319311EE371D800FDAEE6 /* SocialTableViewCell.swift */,
-				0D13192F1EE36E2D00FDAEE6 /* SocialViewController.swift */,
-				C8BA08031EDDB16E008D1079 /* MyTabBarController.swift */,
 				C8EE0B741EB8AAF000E7575B /* LaunchScreen.storyboard */,
 				C82D16311ED5C57F00BA2D76 /* Images.xcassets */,
 				C84103E61EC0925D00138044 /* GoogleService-Info.plist */,
