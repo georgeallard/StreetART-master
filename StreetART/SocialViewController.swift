@@ -16,7 +16,7 @@ class SocialViewController: UIViewController, UITableViewDataSource, UITableView
         // Do any additional setup after loading the view.
     }
     
-    
+    //let aboutWebsites = ["hi"]
     
     let imagesOfWeb = ["Bristol Street Art", "Global Street Art", "Faile", "Gaia", "DABSMYLA", "OSGEMEOS", "Retna", "Phlegm"]
     
@@ -25,18 +25,20 @@ class SocialViewController: UIViewController, UITableViewDataSource, UITableView
         return (imagesOfWeb.count)
     }
 
-    
+ 
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SocialTableViewCell
         
+        
+        
         cell.myImage.image = UIImage(named: (imagesOfWeb[indexPath.row] + ".jpg"))
         
         cell.myLabel.text = imagesOfWeb[indexPath.row]
-        
-        
+       
+    
         cell.alpha = 0
         UIView.animate(withDuration: 0.3, animations: {
             cell.alpha = 1

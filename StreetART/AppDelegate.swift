@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationBarAppearace = UINavigationBar.appearance()
     
         
-        // navigationBarAppearace.tintColor = .black
+        navigationBarAppearace.tintColor = .white
         navigationBarAppearace.barTintColor = .black
         
         navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
