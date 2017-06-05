@@ -134,6 +134,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
             }
         })
+        
         ref.removeAllObservers()
         
     }
