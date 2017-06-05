@@ -17,7 +17,12 @@ class art {
     var location: String!
     var type: String!
     var ref: FIRDatabaseReference?
+   
     
+    
+    var description: String {
+        return "This art is  \(name!) \(location!)"
+    }
     
     init(snapshot: FIRDataSnapshot) {
         
@@ -34,8 +39,7 @@ class art {
        // type = snapshotValue["type"] as! String
        
 
-    }
-    
+  
 
     
 }

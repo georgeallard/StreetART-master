@@ -23,6 +23,7 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     var annotation = MKAnnotationView()
     
     var artDrops = [art]()
+    
 
     var pointAnnotation = MKPointAnnotation()
     
@@ -57,7 +58,7 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         
         loadCustomLocations()
         
-//        openMapForPlace()
+       dropNewPins()
         
         addAnnotation()
         
@@ -65,7 +66,7 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         
         var art = [CLLocation]()
         
-         dropNewPins()
+     
     
     }
 
@@ -162,7 +163,9 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         }
         else {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            
             annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            
         }
         
         if let annotationView = annotationView {
@@ -171,7 +174,10 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             annotationView.image = UIImage(named: "MapAnnotation")
         }
         
-   
+    
+        
+        
+        openMapForPlace()
         
         return annotationView
         
@@ -198,60 +204,39 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             
             mapView.addAnnotations([artAnnotation])
             
-        }
+                   }
     
         
     }
     
     
-    
-    
+   
     func dropNewPins() {
         
+    
         
-        self.mapView.delegate = self
+        let locations = [
+            ["title": "Banksy", "subtitle": "Manson hitchiker",     "latitude": 51.5661120, "longitude": -0.1356330],
+            ["title": "Banksy", "subtitle": "Banksy One Nation Under CCTV",     "latitude": 51.5171150, "longitude": -0.1353340],
+            ["title": "Banksy", "subtitle": "First Graffiti!",     "latitude": 51.5886853, "longitude": -0.2766477],
+            ["title": "Banksy", "subtitle": "Rat",     "latitude": 51.439158, "longitude":-2.584531],
+            ["title": "Monkey Smoking", "subtitle": "On the Iron Bridge",     "latitude": 51.449185, "longitude":-2.848594],
+            ["title": "Desire", "subtitle": "The new world",     "latitude": 53.924803, "longitude":-0.669346],
+            ["title": "MagiK", "subtitle": "Amazing Spider",     "latitude": 55.749766, "longitude":-4.179483],
+            ["title": "Light", "subtitle": "Calligraphy",     "latitude": 53.895687, "longitude":-7.991744],
+            ["title": "SkepT", "subtitle": "Nature",     "latitude": 51.969072, "longitude":-8.222462],
+            ["title": "Mural", "subtitle": "Art Bomb",     "latitude": 53.157737, "longitude":-1.169244],
+            ["title": "Amazing Wall", "subtitle": "Wolves in Grey",     "latitude": 41.588045, "longitude":-75.480776],
+            ["title": "Digital Lights", "subtitle": "Light art hanging from Tree",     "latitude": 16.280152, "longitude":-88.875459]
+        ]
         
-        let banksyArt = CLLocationCoordinate2DMake(51.5661120, -0.1356330)
-        // Drop a pin
-        let dropPin = MKPointAnnotation()
-        dropPin.coordinate = banksyArt
-        dropPin.title = "Banksy"
-        dropPin.subtitle = "Manson hitchiker"
-        mapView.addAnnotation(dropPin)
-        
-        let newBanksy = CLLocationCoordinate2DMake(51.5171150, -0.1353340)
-        // Drop a pin
-        let dropPinn = MKPointAnnotation()
-        dropPinn.coordinate = newBanksy
-        dropPinn.title = "Banksy"
-        dropPinn.subtitle = "Banksy One Nation Under CCTV"
-        mapView.addAnnotation(dropPinn)
-        
-        let newestBanksy = CLLocationCoordinate2DMake(51.5886853,-0.2766477)
-        // Drop a pin
-        let dropPinnn = MKPointAnnotation()
-        dropPinnn.coordinate = newestBanksy
-        dropPinnn.title = "Banksy"
-        dropPinnn.subtitle = "Banksy One Nation Under CCTV"
-        mapView.addAnnotation(dropPinnn)
-        
-        let newesttBanksy = CLLocationCoordinate2DMake(51.589621,-0.19643)
-        // Drop a pin
-        let dropPinnnn = MKPointAnnotation()
-        dropPinnnn.coordinate = newesttBanksy
-        dropPinnnn.title = "Banksy"
-        dropPinnnn.subtitle = "First Graffiti!"
-        mapView.addAnnotation(dropPinnnn)
-        
-        let newesttBanksy = CLLocationCoordinate2DMake(51.439158, -2.584531)
-        // Drop a pin
-        let dropPinnnnn = MKPointAnnotation()
-        dropPinnnnn.coordinate = newesttBanksy
-        dropPinnnnn.title = "Banksy"
-        dropPinnnnn.subtitle = "First Graffiti!"
-        mapView.addAnnotation(dropPinnnnn)
-        
-   
+        for location in locations {
+            let annotation = MKPointAnnotation()
+            annotation.title = location["title"] as? String
+            annotation.subtitle = location["subtitle"] as? String
+            annotation.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! Double, longitude: location["longitude"] as! Double)
+            mapView.addAnnotation(annotation)
+        }
         
     }
     
@@ -283,41 +268,35 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         })
     }
     
+  
     
-    
-//    func openMapForPlace() {
-//        
-//        let regionDistance:CLLocationDistance = 1000
-//        
-//        let coordinate = artDrops
-//        
-//        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinate!, regionDistance, regionDistance)
-//        
-//        let options = [
-//            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
-//            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
-//        ]
-//        
-//        let placemark = MKPlacemark(coordinate: coordinate!, addressDictionary: nil)
-//        
-//        let mapItem = MKMapItem(placemark: placemark)
-//        
-//        mapItem.name = art.name
-//        
-//        mapItem.openInMaps(launchOptions: options)
-//    }
-//    
-    
-    
-    
-    
-    
-}
+    func  openMapForPlace() {
+      
+        func openMapsAppWithDirections(to coordinate: CLLocationCoordinate2D, destinationName name: String) {
+            let options = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+            
+            let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
+            
+            let mapItem = MKMapItem(placemark: placemark)
+            
+            mapItem.name = art.name // Provide the name of the destination in the To: field
+            
+            mapItem.openInMaps(launchOptions: options)
+        }
+        
+        
+        
+        
+      
+        }
 
-    
 
-    
-    
-    
-    
+        }
+
+
+
+
+
+
+
     
