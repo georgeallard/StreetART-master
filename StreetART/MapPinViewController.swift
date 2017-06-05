@@ -174,10 +174,6 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             annotationView.image = UIImage(named: "MapAnnotation")
         }
         
-    
-        
-        
-        openMapForPlace()
         
         return annotationView
         
@@ -227,7 +223,12 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             ["title": "SkepT", "subtitle": "Nature",     "latitude": 51.969072, "longitude":-8.222462],
             ["title": "Mural", "subtitle": "Art Bomb",     "latitude": 53.157737, "longitude":-1.169244],
             ["title": "Amazing Wall", "subtitle": "Wolves in Grey",     "latitude": 41.588045, "longitude":-75.480776],
-            ["title": "Digital Lights", "subtitle": "Light art hanging from Tree",     "latitude": 16.280152, "longitude":-88.875459]
+            ["title": "Digital Lights", "subtitle": "Light art hanging from Tree",     "latitude": 16.280152, "longitude":-88.875459],
+            ["title": "Banksy", "subtitle": "Monkey Face",     "latitude": 50.743680, "longitude":-1.883553],
+            ["title": "Buffalo", "subtitle": "Cool Illustrations",     "latitude": 50.735466, "longitude":-1.897341],
+            ["title": "Nice Graff", "subtitle": "Desire To Be on Wall",     "latitude": 50.734030, "longitude":-1.877047],
+            ["title": "Pier Graff", "subtitle": "Micky Loves Ya on pier stand",     "latitude": 50.715562, "longitude":-1.875386]
+            
         ]
         
         for location in locations {
@@ -269,29 +270,39 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     }
     
   
+//    
+//    func  openInMaps() {
+//        
+//        
+//        let regionDistance:CLLocationDistance = 1000
+//
+//        let coordinates = art.coordinate
+//        
+//        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates!, regionDistance, regionDistance)
+//        
+//        let options = [
+//            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+//            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+//        ]
+//        
+//        let placemark = MKPlacemark(coordinate: coordinates!, addressDictionary: nil)
+//        
+//        let mapItem = MKMapItem(placemark: placemark)
+//        
+//        mapItem.name = art.name
+//        
+//        mapItem.openInMaps(launchOptions: options)
+//        
+//      
+//     
+//        }
     
-    func  openMapForPlace() {
-      
-        func openMapsAppWithDirections(to coordinate: CLLocationCoordinate2D, destinationName name: String) {
-            let options = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-            
-            let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
-            
-            let mapItem = MKMapItem(placemark: placemark)
-            
-            mapItem.name = art.name // Provide the name of the destination in the To: field
-            
-            mapItem.openInMaps(launchOptions: options)
-        }
-        
         
         
         
       
         }
 
-
-        }
 
 
 

@@ -19,11 +19,6 @@ class art {
     var ref: FIRDatabaseReference?
    
     
-    
-    var description: String {
-        return "This art is  \(name!) \(location!)"
-    }
-    
     init(snapshot: FIRDataSnapshot) {
         
         let snapshotValue = snapshot.value as! [String: Any]
@@ -37,9 +32,6 @@ class art {
         coordinate = CLLocationCoordinate2D(latitude: snapshotValue["lat"] as! Double, longitude: snapshotValue["lng"] as! Double)
         
        // type = snapshotValue["type"] as! String
-       
-
-  
-
-    
+        
+    }
 }
