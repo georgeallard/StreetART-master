@@ -49,6 +49,7 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         locationManager.startUpdatingLocation()
         
         mapView.userTrackingMode = .follow
+      
         
         let ArtIcon = MKPointAnnotation()
         
@@ -57,6 +58,11 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         loadCustomLocations()
         
         addAnnotation()
+        
+        let artAnnotation = MKPointAnnotation()
+        
+        var art = [CLLocation]()
+
     }
 
         
@@ -167,7 +173,22 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
  
     func addAnnotation() {
         
+        let artAnnotation = MKPointAnnotation()
         
+        
+        print(artDrops)
+        
+        
+        for location in artDrops {
+            
+            
+            artAnnotation.coordinate = location.coordinate
+            
+            artAnnotation.title = location.name
+            
+            mapView.addAnnotations([artAnnotation])
+            
+        }
         
         
         
@@ -176,6 +197,8 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         
     }
     
+    
+   
     
 
     func loadCustomLocations() {
@@ -192,14 +215,14 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                 
                 let ref = art(snapshot: snapshot)
                 
-                print(snapshot)
+               // print(snapshot)
                 
                 self.artDrops.append(ref)
                 
-               // self.addAnnotation(artDrops: art)
-                
-                
             }
+            
+            self.addAnnotation()
+            
         })
     }
     
