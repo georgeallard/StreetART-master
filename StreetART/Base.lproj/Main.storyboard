@@ -351,7 +351,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="USERS 3" translatesAutoresizingMaskIntoConstraints="NO" id="qwS-GW-seK">
-                                <rect key="frame" x="-1" y="-49" width="414" height="736"/>
+                                <rect key="frame" x="-1" y="-49" width="415" height="736"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="736" id="qsz-Vz-8iZ"/>
                                 </constraints>
@@ -390,7 +390,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="88Q-WV-ecZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="88Q-WV-ecZ">
                                 <rect key="frame" x="131" y="90" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="d8J-G2-4cW"/>
@@ -481,7 +481,7 @@
                             <constraint firstItem="1tp-Qb-1kf" firstAttribute="top" secondItem="RIc-gh-GZh" secondAttribute="bottom" constant="1" id="fgA-Xu-qMN"/>
                             <constraint firstItem="5O9-yl-cXZ" firstAttribute="top" secondItem="dOf-af-Pft" secondAttribute="bottom" constant="162" id="fqo-OX-CJG"/>
                             <constraint firstItem="dOf-af-Pft" firstAttribute="centerX" secondItem="qDo-dg-Iw3" secondAttribute="centerX" id="hb8-HU-bPi"/>
-                            <constraint firstAttribute="trailing" secondItem="qwS-GW-seK" secondAttribute="trailing" constant="1" id="hn5-pd-8NN"/>
+                            <constraint firstAttribute="trailing" secondItem="qwS-GW-seK" secondAttribute="trailing" id="hn5-pd-8NN"/>
                             <constraint firstItem="RIc-gh-GZh" firstAttribute="leading" secondItem="1rW-RD-pqd" secondAttribute="leading" id="kVH-5k-JrY"/>
                             <constraint firstItem="Iz4-BF-sOC" firstAttribute="leading" secondItem="1rW-RD-pqd" secondAttribute="leadingMargin" constant="89" id="nWK-lH-cHf"/>
                             <constraint firstItem="5O9-yl-cXZ" firstAttribute="top" secondItem="qDo-dg-Iw3" secondAttribute="bottom" constant="96" id="s3x-87-l1l"/>

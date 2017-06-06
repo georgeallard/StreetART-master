@@ -24,6 +24,7 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     var artDrops = [art]()
     
+    var selectedPin:MKPlacemark? = nil
 
     var pointAnnotation = MKPointAnnotation()
     
@@ -179,6 +180,8 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         
     }
 
+    
+    
 
  
     func addAnnotation() {
@@ -268,6 +271,7 @@ class MapPinViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             
         })
     }
+    
     
   
 //    
